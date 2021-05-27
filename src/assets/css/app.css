@@ -27,8 +27,15 @@
 .mb-0 {
   margin-bottom: 0px!important;
 }
+.mb-05 {
+  margin-bottom: 0.5rem !important;
+}
 .mb-1 {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem!important;
+}
+.m-tb1 {
+  margin-top: 10px!important;
+  margin-bottom: 10px!important;
 }
 .btn-mr8 {
   margin-right: 8px;
@@ -82,8 +89,22 @@
   border-right: 0px;
 }
 /*Common*/
+/*Heading - Left side title and right side button*/
+.left-heading-right-button {
+  display: flex;
+  margin-bottom: 10px;
+}
+.left-heading-right-button h4 {
+  flex-grow: 1;
+}
+.left-heading-right-button .space-ml-8 {
+  margin-left: 8px;
+}
 /*Media Query*/
 @media only screen and (max-width: 991px) {
+  .left-heading-right-button {
+    display: block;
+  }
   .filterBox .ant-col {
     margin-bottom: 5px;
     margin-left: initial;
@@ -93,12 +114,15 @@
   .filterBox .ant-col:nth-of-type(1) {
     padding-left: 6px!important;
   }
-  .salesSummaryContent .ant-row .ant-col .bg-white {
+  .content-body .ant-row .ant-col .bg-white {
     margin: 0px 14px 14px 14px!important;
     padding: 14px!important;
   }
 }
 @media only screen and (max-width: 991px) and (orientation: landscape) {
+  .left-heading-right-button {
+    display: flex;
+  }
   .filterBox .ant-col {
     width: auto;
     margin-right: 5px!important;
@@ -108,6 +132,9 @@
   }
 }
 @media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+  .left-heading-right-button {
+    display: flex;
+  }
   .filterBox .ant-col {
     width: auto;
   }

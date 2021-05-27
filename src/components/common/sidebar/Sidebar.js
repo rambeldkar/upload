@@ -32,7 +32,7 @@ const Sidebarlayout = () => {
         defaultOpenKeys={['sub1']}>
         <SubMenu key="sub1" icon={<DashboardOutlined />} title="Dashboard">
           <Menu.Item key="1"><NavLink activeClassName="active" to="/">Sales Summary </NavLink></Menu.Item>
-          <Menu.Item key="3"><NavLink activeClassName="active" to="/">Item Sales</NavLink></Menu.Item>
+          <Menu.Item key="3"><NavLink activeClassName="active" to="/itemsales">Item Sales</NavLink></Menu.Item>
         </SubMenu>
         <Menu.Item key="4" icon={<ShopOutlined />} title="Merchant Management">Merchant Management</Menu.Item>
         <Menu.Item key="5" icon={<UserOutlined />} title="Broker Management">Broker Management</Menu.Item>

@@ -26,6 +26,9 @@
 .mb-0 {
   margin-bottom: 0px!important;
 }
+.mb-05 {
+  margin-bottom: 0.5rem !important;
+}
 .mb-1 {
   margin-bottom: 1rem!important;
 }
@@ -85,3 +88,14 @@
   border-right: 0px;
 }
 /*Common*/
+/*Heading - Left side title and right side button*/
+.left-heading-right-button {
+  display: flex;
+  margin-bottom: 10px;
+}
+.left-heading-right-button h4 {
+  flex-grow: 1;
+}
+.left-heading-right-button .space-ml-8 {
+  margin-left: 8px;
+}

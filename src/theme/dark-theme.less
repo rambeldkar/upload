@@ -23,7 +23,10 @@
 @text-color-light: #fff; // white state color
 @text-color-dark: #000; // black state color
 
-
+.bg-primary{
+    background-color: @primary-color!important;
+    color:@text-color-dark!important
+}
 .br-b-0{
     border-bottom:0px
 }
@@ -36,11 +39,11 @@
 .ant-menu-dark .ant-menu-item-selected>a,.ant-btn-primary{
     color: @text-color-dark!important;
 }
-.bg-white,.ant-picker,.ant-select,.ant-tooltip-inner,.ant-tooltip-arrow-content,.ant-input{
-    background-color: @component-background;
+.bg-white,.ant-picker,.ant-select-selector,.ant-tooltip-inner,.ant-tooltip-arrow-content,.ant-input{
+    background-color: @component-background!important;
 }
-.ant-table-tbody>tr.ant-table-row:hover>td,.ant-table-thead>tr>th{
-    background-color: @body-background;
+.ant-table-tbody>tr.ant-table-row:hover>td,.ant-table-thead>tr>th,.left-heading-right-button .ant-select .ant-select-selector{
+    background-color: @body-background!important;
 }
 .ant-table-tbody>tr>td,.ant-table-thead>tr>th{
     border-bottom-color: @table-body-color;
@@ -118,5 +121,17 @@ input::placeholder {
 .emptyMessageBox{
     p{
       color:@sec-text-color!important
+    }
+}
+
+/*Chart*/
+#itemSalesChart{
+    g[role="menuitem"]{
+        fill:@primary-color!important;
+    }
+    g[opacity="1"] {
+        g[fill="#ffffff"]{
+            fill:@text-color-dark!important;
+        }
     }
 }

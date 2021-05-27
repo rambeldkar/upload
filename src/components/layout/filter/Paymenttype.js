@@ -6,7 +6,11 @@ const selectOnChange = (value) => {
 }
 const Paymenttype = () => {
     return (
-        <Select placeholder="Select Payment Type"
+        <>
+        <div className="mb-05">
+            <label title="Select payment type">Select Payment Type</label>
+        </div>
+        <Select placeholder="Select Payment Type"  
             style={{ width: '100%' }}
             onChange={selectOnChange} defaultValue="All"
         >
@@ -16,6 +20,7 @@ const Paymenttype = () => {
             <Option value="Wallet">Wallet</Option>
             <Option value="Others">Others</Option>
         </Select>
+        </>
     );
 }
 export default Paymenttype;

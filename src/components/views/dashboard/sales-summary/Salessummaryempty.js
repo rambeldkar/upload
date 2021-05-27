@@ -38,7 +38,7 @@ const Salessummaryempty = () => {
                     <Exportbutton />
                 </Col>
             </Row>
-            <Content className="salesSummaryContent" style={{ minHeight: 200 }}>
+            <Content className="content-body" style={{ minHeight: 200 }}>
                 <Row>
                     <Col lg={24} xs={24}>
                         <div className="bg-white" style={{ margin: '0px 14px 0px 14px', padding: 14, minHeight: 200 }}>

@@ -1,15 +1,13 @@
 import React from 'react';
 import { Popover, Button, Row, Col, Space } from 'antd';
-import Rangepicker from '../layout/filter/Rangepicker.js'
 import Paymenttype from '../layout/filter/Paymenttype.js'
 import { DownloadOutlined, FileExcelOutlined } from '@ant-design/icons';
 
 const Exportform = () => {
   return (
     <>
-      <Space lg={24} xs={24} direction="vertical" className="mb-1">
-        <Rangepicker />
-        <Paymenttype />
+      <Space  style={{width: '100%'}} direction="vertical" className="mb-1">
+        <Paymenttype/>
       </Space>
       <Row gutter={12}>
         <Col lg={24} xs={24} align="right" >

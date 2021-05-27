@@ -1,12 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Select, Divider, Modal, Form, Input, TimePicker, Row, Col, message } from 'antd';
-import { PlusOutlined, FieldTimeOutlined } from '@ant-design/icons';
+import {
+  Select,
+  Divider,
+  Modal,
+  Form,
+  Input,
+  TimePicker,
+  Row,
+  Col,
+  message,
+} from "antd";
+import { PlusOutlined, FieldTimeOutlined } from "@ant-design/icons";
 const { Option } = Select;
 
 const selectOnChange = (value) => {
   console.log(`selected ${value}`);
-}
+};
 /*----------------All Message--------------
 message.success({
   content: 'This is a message of success',
@@ -28,10 +38,11 @@ message.info ({
 
 const ShiftDetailsForm = ({ visible, onCreate, onCancel }) => {
   const [form] = Form.useForm();
-  const format = 'HH:mm A';
+  const format = "HH:mm A";
   return (
     <Modal
-      visible={visible} centered
+      visible={visible}
+      centered
       title="Add reporting hours"
       okText="Save"
       cancelText="Cancel"
@@ -44,7 +55,7 @@ const ShiftDetailsForm = ({ visible, onCreate, onCancel }) => {
             onCreate(values);
           })
           .catch((info) => {
-            console.log('Validate Failed:', info);
+            console.log("Validate Failed:", info);
           });
       }}
     >
@@ -53,7 +64,7 @@ const ShiftDetailsForm = ({ visible, onCreate, onCancel }) => {
         layout="vertical"
         name="reporting_hours_form"
         initialValues={{
-          modifier: 'public',
+          modifier: "public",
         }}
       >
         <Form.Item
@@ -62,30 +73,42 @@ const ShiftDetailsForm = ({ visible, onCreate, onCancel }) => {
           rules={[
             {
               required: true,
-              message: 'Please enter shift name',
+              message: "Please enter shift name",
             },
           ]}
         >
           <Input placeholder="Enter shift name" />
         </Form.Item>
-        <Form.Item >
+        <Form.Item>
           <Row gutter={8}>
             <Col span={12}>
               <Form.Item
                 name="startTime"
                 label="Start time"
-                rules={[{ required: true, message: 'Please enter  start time' }]}
-                style={{ display: 'inline-block', width: '100%', marginBottom: '0px' }}>
-                <TimePicker format={format} style={{ width: '100%' }} />
+                rules={[
+                  { required: true, message: "Please enter  start time" },
+                ]}
+                style={{
+                  display: "inline-block",
+                  width: "100%",
+                  marginBottom: "0px",
+                }}
+              >
+                <TimePicker format={format} style={{ width: "100%" }} />
               </Form.Item>
             </Col>
             <Col span={12}>
               <Form.Item
                 name="endTime"
                 label="End time"
-                rules={[{ required: true, message: 'Please enter end time' }]}
-                style={{ display: 'inline-block', width: '100%', marginBottom: '0px' }}
-              ><TimePicker format={format} style={{ width: '100%' }} />
+                rules={[{ required: true, message: "Please enter end time" }]}
+                style={{
+                  display: "inline-block",
+                  width: "100%",
+                  marginBottom: "0px",
+                }}
+              >
+                <TimePicker format={format} style={{ width: "100%" }} />
               </Form.Item>
             </Col>
           </Row>
@@ -96,12 +119,15 @@ const ShiftDetailsForm = ({ visible, onCreate, onCancel }) => {
           rules={[
             {
               required: true,
-              message: 'Please enter timezone',
+              message: "Please enter timezone",
             },
           ]}
         >
-          <Select placeholder="Select timezone" className="locationSelect" dropdownClassName="locationDropdown"
-            style={{ width: '100%' }}
+          <Select
+            placeholder="Select timezone"
+            className="locationSelect"
+            dropdownClassName="locationDropdown"
+            style={{ width: "100%" }}
           >
             <Option value="eastern"> Eastern Time Zone</Option>
             <Option value="central"> Central Time Zone</Option>
@@ -120,13 +146,12 @@ const ShiftDetailsForm = ({ visible, onCreate, onCancel }) => {
 
 const Allday = (props) => {
   const [visible, setVisible] = useState(false);
-
   const onCreate = (values) => {
-    console.log('Received values of form: ', values);
+    console.log("Received values of form: ", values);
     setVisible(false);
     message.success({
-      content: 'This is a message of success',
-      duration: 2
+      content: "This is a message of success",
+      duration: 2,
     });
   };
 
@@ -139,26 +164,43 @@ const Allday = (props) => {
           setVisible(false);
         }}
       />
-      <Select defaultValue={props.selectvalue} className="locationSelect" dropdownClassName="locationDropdown"
+      <Select
+        defaultValue={props.selectvalue}
+        className="locationSelect"
+        dropdownClassName="locationDropdown"
         style={{ width: 160 }}
         onChange={selectOnChange}
-        dropdownRender={menu => (
+        dropdownRender={(menu) => (
           <div>
             {menu}
-            <Divider style={{ margin: '4px 0' }} />
-            <div style={{ display: 'flex', flexWrap: 'nowrap', padding: 8 }}>
-              <Link to="" onClick={() => { setVisible(true); }}
-                style={{ flex: 'none', padding: '0px', display: 'block', cursor: 'pointer' }}>
+            <Divider style={{ margin: "4px 0" }} />
+            <div style={{ display: "flex", flexWrap: "nowrap", padding: 8 }}>
+              <Link
+                to=""
+                onClick={() => {
+                  setVisible(true);
+                }}
+                style={{
+                  flex: "none",
+                  padding: "0px",
+                  display: "block",
+                  cursor: "pointer",
+                }}
+              >
                 <PlusOutlined /> Add reporting hours
               </Link>
             </div>
           </div>
         )}
       >
-        <Option value="Allday"><FieldTimeOutlined /> All day</Option>
-        <Option value="Shift1"><FieldTimeOutlined /> Shift 1</Option>
+        <Option value="Allday">
+          <FieldTimeOutlined /> All day
+        </Option>
+        <Option value="Shift1">
+          <FieldTimeOutlined /> Shift 1
+        </Option>
       </Select>
     </>
   );
-}
+};
 export default Allday;
