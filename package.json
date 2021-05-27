@@ -1,6 +1,5 @@
 {
   "name": "ekikart-demo",
-  "homepage": "https://rambeldkar.github.io/upload",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
